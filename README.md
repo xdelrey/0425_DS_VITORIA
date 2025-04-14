@@ -5,7 +5,7 @@
 
 ----------
 
-### **Nombre carpeta**: 2409_dsft_thebridge
+### **Nombre carpeta**: 0425_DS_VITORIA
 
 ***Repository link:*** https://github.com/diego-dng/0425_DS_VITORIA
 
