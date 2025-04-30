@@ -1,3 +1,6 @@
+def dibujar_linea(ancho=10):
+    return print('-'*ancho)
+
 def numero_a_dia_semana(num):
     '''
     función que convierte números del 1 al 7 en nombres de los dias de la semana.
