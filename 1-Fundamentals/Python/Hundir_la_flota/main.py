@@ -1,30 +1,28 @@
 from utils import *
 import variables as vr
 
-#crear tableros vacíos
+
+# ------------- CREAMOS TABLEROS VACÍOS ------------- #
+
 #Tablero 1 Jugador (barcos Jug con disparos Rival)
-tablero_barcos_jugador = utils.crear_tablero()
+tablero_barcos_jugador = crear_tablero()
+
 #Tablero 2 Jugador (disparos Jug)
-tablero_disparos_jugador
+tablero_disparos_jugador = crear_tablero()
+
 #Tablero 1 Rival (barcos Rival con disparos Jug)
-tablero_barcos_rival
+tablero_barcos_rival = crear_tablero()
+
 #Tablero 2 Rival (disparos Rival)
-tablero_disparos_rival
-'''
-tablero_jugador = utils.crear_tablero()
-tablero_rival = utils.crear_tablero()
-print("-"*10)
+tablero_disparos_rival = crear_tablero()
 
-tablero_jugador = utils.colocar_barco(vr.barco_jugador, tablero_jugador)
-print(tablero_jugador)
 
-#tablero_rival = utils.colocar_barco(vr.barco_rival, tablero_rival)
-#print(tablero_rival)
+# ------------- COLOCAMOS LOS BARCOS DE CADA JUGADOR  ------------- #
 
-print("-"*10)
+barcos_jugador = inicializar_barcos()
+print("TABLERO BARCOS JUGADOR")
+print(dibujar_tablero_con_barcos(tablero_barcos_jugador, barcos_jugador))
 
-utils.disparar((0,2), tablero_jugador)
-print(tablero_jugador)
-
-utils.validar_casilla_inicial()
-'''
+barcos_rival = inicializar_barcos()
+print("TABLERO BARCOS RIVAL")
+print(dibujar_tablero_con_barcos(tablero_barcos_rival, barcos_rival))

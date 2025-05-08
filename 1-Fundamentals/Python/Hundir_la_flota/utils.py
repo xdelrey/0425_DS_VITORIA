@@ -117,12 +117,38 @@ def dibujar_tablero_con_barcos(tablero_barcos, barcos):
         tablero_barcos = dibujar_barco(barco, tablero_barcos)
     return tablero_barcos
 
-def disparar(casilla,tablero = 10):
-    '''
-    función que recibe una casilla (un vector de 2 elementos) y un tablero (por defecto 10x10)
-    '''
+'''
+def disparar(casilla,tablero):
     if tablero[casilla] in ('O', 'X'):
         tablero[casilla] = "X"
     elif tablero[casilla] in ("_", 'A'):
         tablero[casilla] = "A"
+    return tablero
+'''
+
+def disparar(tablero):
+    '''
+    función que recibe el tablero de un jugador,
+    pide una casilla (coordenadas x, y) y actualiza el tablero según el disparo.
+    '''
+    while True:
+        try:
+            fila = int(input("Introduce la fila: "))
+            columna = int(input("Introduce la columna: "))
+            
+            # Compruebo que están dentro del rango del tablero
+            if 0 <= fila < len(tablero) and 0 <= columna < len(tablero[0]):
+                break
+            else:
+                print("Las coordenadas deben estar entre 0 y 9.")
+        except ValueError:
+            print("Introduce un número válido.")
+
+    coordenadas = tablero[fila][columna]
+
+    if coordenadas in ('O', 'X'):
+        tablero[fila][columna] = "X"  # Tocado o ya disparado
+    elif coordenadas in ("_", 'A'):
+        tablero[fila][columna] = "A"  # Agua o ya fallado
+    
     return tablero
